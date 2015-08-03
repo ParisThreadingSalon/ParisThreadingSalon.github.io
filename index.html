@@ -7,8 +7,8 @@ Author's Website: AwesomeHacker.tk \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ParisThreadingSalon | Home</title>
-  <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		 <title>ParisThreadingSalon | Home</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/superfish.css" media="screen">
 		<link href="css/camera.css" rel="stylesheet" type="text/css" media="all" />
@@ -17,9 +17,39 @@ Author's Website: AwesomeHacker.tk \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
 		<script type="text/javascript" src="js/move-top.js"></script>
 		<script type="text/javascript" src="js/easing.js"></script>
 		<script>
-		/*This the end of the script imports*/
-/* End of head */
+		(function($){
+			$(document).ready(function(){
+			
+				var example = $('#example').superfish({
+				
+				});
+			
+				$('.destroy').on('click', function(){
+					example.superfish('destroy');
+				});
+				$('.init').on('click', function(){
+					example.superfish();
+				});
+				$('.open').on('click', function(){
+					example.children('li:first').superfish('show');
+				});
+				$('.close').on('click', function(){
+					example.children('li:first').superfish('hide');
+				});
+			});
+		})(jQuery);
+		</script>
+		<script>
+		jQuery(function(){
+			jQuery('#camera_wrap_1').camera({
+				height: '500',
+				pagination: false,
+				thumbnails: false,
+				imagePath: '../images/'
+			});
+
+		});
+	</script>
 </head>
 <body>
-/* This is the Body */
 </body>
